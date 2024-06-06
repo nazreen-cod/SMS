@@ -1,0 +1,40 @@
+﻿@model StudentManagementSystem.Models.StudentManagement
+
+<head>
+    <title> Course Management</title>
+    <link href="~/css/PosLaju.css" rel="stylesheet" />
+</head>
+
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <h5>Add new course</h5>
+        <div class="row">
+            <p class="col-md-6">
+                <label>@Html.DisplayNameFor(x => x.courseName):</label>
+                @Html.TextBoxFor(x => x.courseName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.courseName, "", new { @class = "text-danger" })
+            </p>
+        </div>
+       
+
+
+
+        <h5>Course</h5>
+        <div class="row">
+            <p class="col-md-4">
+                <label>@Html.DisplayNameFor(x => x.IndexDept):</label>
+                @Html.DropDownListFor(x => x.IndexDept, new SelectList(Model.DictDept, "Key", "Value"),
+                         "Select Department:", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.IndexDept, "", new { @class = "text-danger" })
+            </p>
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </p>
+    }
+
+   
+</body>
