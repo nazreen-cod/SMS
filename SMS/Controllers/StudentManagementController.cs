@@ -58,6 +58,15 @@ namespace SMS.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult addStudent()
+        {
+            StudentManagement add = new StudentManagement();
+            add.Intake = -1;
+            return View(add);
+        }
+
+        [HttpPost]
         public IActionResult addStudent(StudentManagement add)
         {
             SqlConnection conn = new SqlConnection(configuration.GetConnectionString("ParcelConnStr"));
@@ -92,7 +101,16 @@ namespace SMS.Controllers
             return View("addStudent", add);
         }
 
+        [HttpGet]
+        public IActionResult addCourse()
+        {
+            StudentManagement course = new StudentManagement();
+            course.IndexDept = -1;
+            return View(course);
 
+        }
+
+        [HttpPost]
         public IActionResult addCourse(StudentManagement course)
         {
             SqlConnection conn = new SqlConnection(configuration.GetConnectionString("ParcelConnStr"));

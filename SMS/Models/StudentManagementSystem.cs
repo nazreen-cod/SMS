@@ -70,9 +70,9 @@ namespace StudentManagementSystem.Models
             {
                 return new Dictionary<int, string>()
                 {
-                    {1, "Electrical Engineering" },
-                    {2, "Mechanical Engineering" },
-                    {3, "Computer And Information" }
+                    {0, "Electrical Engineering" },
+                    {1, "Mechanical Engineering" },
+                    {2, "Computer And Information" }
 
                 };
             }
@@ -85,6 +85,7 @@ namespace StudentManagementSystem.Models
         [Display(Name = "Intake")]
         public int Intake { get; set; }
 
+        [Required]
         [Display(Name = "Intake")]
         public IDictionary<int, string> DictIntake
         {
@@ -92,7 +93,7 @@ namespace StudentManagementSystem.Models
             {
                 return new Dictionary<int, string>()
                 {
-                   
+                    {0, "2012" },
                     {1, "2013" },
                     {2, "2014" },
                     {3, "2015" },
