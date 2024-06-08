@@ -1,0 +1,35 @@
+CREATE TABLE [dbo].[Student] (
+    [Id]            CHAR (10)     NOT NULL,
+    [Name]          VARCHAR (100) NOT NULL,
+    [IC]            CHAR (12)     NOT NULL,
+    [Address]       VARCHAR (255) NOT NULL,
+    [Intake]        INT           NOT NULL,
+    [Age]           VARCHAR (50)  NOT NULL,
+    [Phone]         VARCHAR (12)  NOT NULL,
+    [PersonalEmail] VARCHAR (100) NOT NULL,
+    [StudentEmail]  VARCHAR (100) NOT NULL,
+    [Course]        VARCHAR (50)  NOT NULL,
+    [Department]    VARCHAR (50)  NOT NULL,
+    [Status]        VARCHAR (50)  NOT NULL
+);
+
+
+CREATE PROCEDURE spInsertStudent
+	@id CHAR(10),
+    @name VARCHAR(100),
+    @ic CHAR(12),
+    @address VARCHAR(255),
+    @intake INT ,
+    @age INT ,
+    @phone VARCHAR(12),
+    @personalemail VARCHAR(100),
+	@studentemail VARCHAR(100),
+	@status VARCHAR(50),
+	@course VARCHAR(50),
+	@department VARCHAR(50)
+	
+AS
+BEGIN
+    INSERT INTO Student (Id, Name, IC, Address, Intake, Age, Phone, PersonalEmail, StudentEmail, Status, Course, Department)
+    VALUES (@id, @name, @ic, @address, @intake, @age, @phone, @personalemail, @studentemail, @status, @course, @department);
+END;
